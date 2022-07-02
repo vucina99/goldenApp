@@ -1,0 +1,4 @@
+[09-Apr-2022 14:34:36 Europe/Sofia] PHP Parse error:  syntax error, unexpected end of file in /home/goldtradrs/public_html/admin/edit-user.php on line 388
+[09-Apr-2022 14:38:31 Europe/Sofia] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/goldtradrs/public_html/admin/edit-user.php on line 305
+[09-Apr-2022 14:38:44 Europe/Sofia] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/goldtradrs/public_html/admin/edit-user.php on line 305
+[09-Apr-2022 14:38:55 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$_POST' (T_VARIABLE) in /home/goldtradrs/public_html/admin/edit-user.php on line 305

@@ -1,0 +1,11 @@
+[08-Apr-2022 22:49:16 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
+[08-Apr-2022 22:49:21 Europe/Sofia] PHP Warning:  include(includes/javascrips.php): failed to open stream: No such file or directory in /home/goldtradrs/public_html/Login-Register/sign-up.php on line 124
+[08-Apr-2022 22:49:21 Europe/Sofia] PHP Warning:  include(): Failed opening 'includes/javascrips.php' for inclusion (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home/goldtradrs/public_html/Login-Register/sign-up.php on line 124
+[08-Apr-2022 22:49:28 Europe/Sofia] PHP Warning:  include(includes/javascrips.php): failed to open stream: No such file or directory in /home/goldtradrs/public_html/Login-Register/sign-up.php on line 124
+[08-Apr-2022 22:49:28 Europe/Sofia] PHP Warning:  include(): Failed opening 'includes/javascrips.php' for inclusion (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home/goldtradrs/public_html/Login-Register/sign-up.php on line 124
+[08-Apr-2022 22:50:07 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
+[08-Apr-2022 22:50:14 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
+[08-Apr-2022 22:50:19 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in-error.php on line 7
+[08-Apr-2022 22:51:27 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
+[08-Apr-2022 22:51:49 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
+[08-Apr-2022 22:52:25 Europe/Sofia] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/goldtradrs/public_html/Login-Register/sign-in.php on line 7
