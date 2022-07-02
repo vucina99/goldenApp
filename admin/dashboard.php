@@ -738,7 +738,7 @@ if (strlen($_SESSION['adminusername']) == 0) {
                                             if(!empty($_GET['name_surname'])){
                                                 $sql.= " AND users.name_surname LIKE '%$name_surname%'";
                                             }
-                                            
+
                                             if(isset($_GET['status_id']) && $_GET['status_id'] !== -1){
                                                 $sql.= " AND users.status = '$status'";
                                             }
