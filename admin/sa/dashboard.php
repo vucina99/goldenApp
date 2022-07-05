@@ -567,6 +567,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             $admin_id =  $_GET['admin_id'];
                                             $email =   $_GET['email'];
                                             $status =  $_GET['status_id'];
+                                            $country =  $_GET['country'];
 
                                             if(!empty($_GET['user_id'])){
                                                 $sql.= " AND users.id = '$user_id'";
@@ -584,9 +585,11 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             if(!empty($_GET['email'])){
                                                 $sql.= " AND users.email LIKE '%$email%'";
                                             }
+                                            if(!empty($_GET['country'])){
+                                                $sql.= " AND users.country LIKE '%$country%'";
+                                            }
 
                                         }
-
                                         $query = $dbh->prepare($sql);
                                         $query->execute();
                                         $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -704,6 +707,8 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                 <th>Email</th>
                                                 
                                                 <th>Password</th>
+                                                <th>Action</th>
+                                                <th>Manager</th>
                                             </tr>
                                         </thead>
                                         <input class="form-control" id="myInput" type="text" placeholder="Search by country, group...">
@@ -733,7 +738,13 @@ if (strlen($_SESSION['alogin']) == 0) {
 
                                                         </td>
                                                         <td hidden><?php echo htmlentities($result->grupa); ?></td>
+                                                        <td>
+                                                            <select name="status" id="status" class="form-control w-100 status" onchange="setAdminManager(<?= $result->id ?> , this)">
 
+                                                            <option value="1" <?php if($result->manager ==  true) { ?> selected <?php } ?>  > Yes</option>
+                                                                <option value="0" <?php if($result->manager ==  false) { ?> selected <?php } ?>  > No</option>
+                                                            </select> &nbsp;
+                                                        </td>
                                                     </tr>
                                             <?php $cnt = $cnt + 1;
                                                 }
@@ -824,6 +835,24 @@ if (strlen($_SESSION['alogin']) == 0) {
                     })
                 }
             }
+        function setAdminManager(id , item){
+            let admin = item.value;
+
+            $.ajax({
+                method: "POST",
+                url: "setAdminManager.php",
+                DataType: "json",
+                data: {id,admin},
+                success: function (data) {
+
+                },
+                error: function (error, xhr, status) {
+                    console.log(error);
+                }
+
+
+            })
+        }
 
             function setStatus(id , item){
                 let status = item.value;

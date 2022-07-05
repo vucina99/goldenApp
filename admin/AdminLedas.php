@@ -284,9 +284,17 @@ include('includes/config.php');
                                          id="msgshow"><?php echo htmlentities($msg); ?> </div><?php } ?>
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead class="table-hover">
-                                    <tr>
+                                    <tr >
 
-                                        <th colspan="2" class="text-center">#</th>
+                                        <th colspan="2"  class="text-center p-0 ">
+                                            <select name="" id="" class="mb-3" onchange="checkedMoreLeads(this)">
+                                                <option value="-1">Select leads</option>
+                                                <option value="10">Select 10</option>
+                                                <option value="20">Select 20</option>
+                                                <option value="50">Select 50</option>
+                                                <option value="100">Select 100</option>
+                                            </select>
+                                        </th>
                                         <!-- <th>Username</th> -->
                                         <th>Name Surname</th>
                                         <th>Account Balance</th>
@@ -308,15 +316,15 @@ include('includes/config.php');
                                     $results = $query->fetchAll(PDO::FETCH_OBJ);
                                     $cnt = 1;
                                     if ($query->rowCount() > 0) {
-                                        foreach ($results as $result) { ?>
+                                        foreach ($results as $index => $result) { ?>
                                             <tr>
 
                                                 <td class="text-center"><input type="checkbox" name="allUsers"
-                                                                               class="allUsers"
+                                                                               class="allUsers notUnique uniqueUser<?= $index; ?>"
                                                                                value="<?php echo $result->id; ?>"
                                                                                id="allUsers"></td>
                                                 <td class="text-center"><a class="text-white"
-                                                                           href="edit-user.php?edit=<?php echo $result->id; ?>"><?php echo htmlentities($cnt); ?></a>
+                                                                           href="edit-user.php?edit=<?php echo $result->id; ?>"><?php echo htmlentities($index + 1); ?></a>
                                                 </td>
                                                 <td hidden><?php echo htmlentities($result->username); ?></td>
                                                 <td><a class="text-white"
@@ -382,8 +390,6 @@ include('includes/config.php');
                                                 </td>
                                                 </td>
 
-
-                                                <td hidden><?php echo htmlentities($result->grupa); ?></td>
                                                 <td>
                                                     <select name="status" id="status" class="form-control w-100" onchange="setStatus(<?= $result->id ?> , this)">
                                                         <option value="-1" selected disabled="true">Select status</option>
@@ -401,6 +407,8 @@ include('includes/config.php');
                                                         ?>
                                                     </select> &nbsp;
                                                 </td>
+                                                <td hidden><?php echo htmlentities($result->grupa); ?></td>
+
                                             </tr>
                                             <?php $cnt = $cnt + 1;
                                         }
@@ -529,6 +537,16 @@ include('includes/config.php');
 
 
             })
+        }
+
+        function checkedMoreLeads(data){
+            $(".notUnique").prop('checked', false);
+            if(data.value !== -1){
+                for(let i = 0 ; i < data.value ; i++ ){
+                    $(".uniqueUser"+i).prop('checked', true);
+                }
+
+            }
         }
         function setAdminLeads() {
             var AllCheckedUserID = [];
